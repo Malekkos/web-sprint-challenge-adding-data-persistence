@@ -4,7 +4,6 @@ const router = require("express").Router()
 const Project = require("./model")
 
 router.get("/", (req, res, next) => {
-  console.log("Im here!", Project.getAll())
   Project.getAll()
   .then(projects => {
     res.status(200).json(projects)
