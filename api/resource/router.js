@@ -7,5 +7,12 @@ router.get("*", (req, res, next) => {
   res.json({ message: "Inside of the resource Router!"})
 })
 
+router.use((err, req, res, next) => { // eslint-disable-line
+  res.status(500).json({
+    customMessage: "Something wrong inside of the resource-router",
+    message: err.message,
+    stack: err.stack,
+  })
+})
 
 module.exports = router
