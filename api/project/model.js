@@ -14,4 +14,10 @@ async function getAll() {
   return data
 }
 
-module.exports = { getAll }
+async function addProject(details) {
+  const data = await db("project")
+  .insert(details)
+  return data
+}
+
+module.exports = { getAll, addProject }
