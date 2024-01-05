@@ -3,8 +3,14 @@
 const router = require("express").Router()
 const Resource = require("./model")
 
-router.get("*", (req, res, next) => {
-  res.json({ message: "Inside of the resource Router!"})
+router.get("/", (req, res, next) => {
+  Resource.getAllResources()
+  .then(resources => {
+    res.status(200).json(resources)
+  })
+  .catch(error => {
+    next(error)
+  })
 })
 
 router.use((err, req, res, next) => { // eslint-disable-line
