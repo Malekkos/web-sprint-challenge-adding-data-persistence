@@ -13,12 +13,18 @@ async function getAllTasks() {
       task.task_completed = true
     }
   })
-
   return data
+}
+
+async function addTask(newTask) {
+  const data = await db("tasks")
+    .insert(newTask)
+
+    return data
 }
 
 
 
 
 
-module.exports = { getAllTasks }
+module.exports = { getAllTasks, addTask }
