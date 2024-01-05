@@ -3,7 +3,7 @@
 const db = require("../../data/dbConfig")
 
 async function getAll() {
-  const data = await db("project")
+  const data = await db("projects")
   data.forEach(field => {
     if(field.project_completed === 0) {
       field.project_completed = false
@@ -15,7 +15,7 @@ async function getAll() {
 }
 
 async function addProject(details) {
-  const data = await db("project")
+  const data = await db("projects")
   .insert(details)
   return data
 }

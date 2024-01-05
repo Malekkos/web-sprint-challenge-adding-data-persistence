@@ -3,18 +3,18 @@
  * @returns { Promise<void> }
  */
 exports.up = async function(knex) {
-  await knex.schema.createTable("project", table => {
+  await knex.schema.createTable("projects", table => {
     table.increments("project_id").notNullable()
     table.string("project_name", 100).notNullable()
     table.string("project_description")
     table.boolean("project_completed").defaultTo(false)
   })
-  await knex.schema.createTable("resource", table => {
+  await knex.schema.createTable("resources", table => {
     table.increments("resource_id").notNullable()
     table.string("resource_name", 100).notNullable().unique()
     table.string("resource_description")
   })
-  await knex.schema.createTable("task", table => {
+  await knex.schema.createTable("tasks", table => {
     table.increments("task_id").notNullable()
     table.string("task_description").notNullable()
     table.string("task_notes")
@@ -23,7 +23,7 @@ exports.up = async function(knex) {
       .unsigned()
       .notNullable()
       .references("project_id")
-      .inTable("project")
+      .inTable("projects")
       .onDelete("RESTRICT")
       .onUpdate("RESTRICT")
   })
@@ -33,14 +33,14 @@ exports.up = async function(knex) {
       .unsigned()
       .notNullable()
       .references("project_id")
-      .inTable("project")
+      .inTable("projects")
       .onDelete("RESTRICT")
       .onUpdate("RESTRICT")
     table.integer("resource_id")
       .unsigned()
       .notNullable()
       .references("resource_id")
-      .inTable("resource")
+      .inTable("resources")
       .onDelete("RESTRICT")
       .onUpdate("RESTRICT")
   })

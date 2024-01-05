@@ -9,7 +9,7 @@ router.get("*", (req, res, next) => {
 
 router.use((err, req, res, next) => { // eslint-disable-line
   res.status(500).json({
-    customMessage: "Something wrong inside of the task-router",
+    customMessage: "Something wrong inside of the tasks-router",
     message: err.message,
     stack: err.stack,
   })

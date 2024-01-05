@@ -26,7 +26,7 @@ router.post("/", (req, res, next) => {
 
 router.use((err, req, res, next) => { // eslint-disable-line
   res.status(500).json({
-    customMessage: "Something wrong inside of the project-router",
+    customMessage: "Something wrong inside of the projects-router",
     message: err.message,
     stack: err.stack,
   })

@@ -9,7 +9,7 @@ router.get("*", (req, res, next) => {
 
 router.use((err, req, res, next) => { // eslint-disable-line
   res.status(500).json({
-    customMessage: "Something wrong inside of the resource-router",
+    customMessage: "Something wrong inside of the resources-router",
     message: err.message,
     stack: err.stack,
   })
