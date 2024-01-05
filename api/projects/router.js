@@ -12,7 +12,7 @@ router.get("/", (req, res, next) => {
     next(error)
   })
 })
-
+/
 router.post("/", (req, res, next) => {
   const details = req.body
   Project.addProject(details)
