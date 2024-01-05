@@ -16,11 +16,17 @@ const resources = [
   {"resource_name": "Fragile Window", "resource_description": "Part 2 of 2 step plan"},
 ]
 
-// const task = [
-
-// ]
+const tasks = [
+  {"task_description": "Become a carinvore", "task_notes": "Little Progress", "task_completed": false, "project_id": 1},
+  {"task_description": "I am null", "task_notes": null, "task_completed": true, "project_id": 1},
+  {"task_description": "Meet the wilsons", "task_notes": "Took them to jurassic park", "task_completed": false, "project_id": 2},
+  {"task_description": "They deemed my lack of dinosaur knowledge incompetent", "task_notes": "They shall rue the day", "task_completed": true, "project_id": 2},
+  {"task_description": "Better employee === pay more === less for me", "task_notes": "This is criminal", "task_completed": false, "project_id": 3},
+  {"task_description": "child workers ethical", "task_notes": "dont be lame lol", "task_completed": true, "project_id": 3},
+]
 
 exports.seed = async function (knex) {
   await knex("projects").insert(projects)
   await knex("resources").insert(resources)
+  await knex("tasks").insert(tasks)
 }
