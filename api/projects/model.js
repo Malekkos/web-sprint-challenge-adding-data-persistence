@@ -2,7 +2,7 @@
 
 const db = require("../../data/dbConfig")
 
-async function getAll() {
+async function getAllProjects() {
   const data = await db("projects")
   data.forEach(field => {
       if(field.project_completed === 0) {
@@ -22,4 +22,4 @@ async function addProject(details) {
   return data
 }
 
-module.exports = { getAll, addProject }
+module.exports = { getAllProjects, addProject }
