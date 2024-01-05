@@ -12,11 +12,21 @@ router.get("/", (req, res, next) => {
     next(error)
   })
 })
-/
+
 router.post("/", (req, res, next) => {
   const details = req.body
+  
+  console.log(details)
   Project.addProject(details)
   .then(() => {
+    if(!details.project_completed) {
+      details.project_completed = false
+    } else if(details.project_completed === 0) {
+      details.project_completed = false
+    } else {
+      details.project_completed = true
+    }
+    console.log(details)
     res.status(201).json(details)
   })
   .catch(error => {
