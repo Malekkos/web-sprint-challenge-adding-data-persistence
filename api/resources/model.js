@@ -8,4 +8,11 @@ async function getAllResources() {
   return data
 }
 
-module.exports = { getAllResources }
+async function addResource(resource) {
+  const data = await db("resources")
+    .insert(resource)
+  
+  return data
+} 
+
+module.exports = { getAllResources, addResource }

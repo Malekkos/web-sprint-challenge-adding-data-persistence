@@ -7,9 +7,14 @@ const projects = [
   {"project_name": "Meet more women", "project_description": "Mom's asking questions I dare not answer", "project_completed": false},
 ]
 
-// const ingredient = [
-
-// ]
+const resources = [
+  {"resource_name": "Ribeye", "resource_description": "It is both flavoursome and tender, coming from the lightly worked upper rib cage area which spans from the sixth to twelfth ribs of the cattle. Its marbling of fat makes it very good for fast and hot cooking. "},
+  {"resource_name": "A pair of glasses", "resource_description": "a pair of lenses set in a frame resting on the nose and ears, used to correct or assist defective eyesight or protect the eyes."},
+  {"resource_name": "Infinite Money Glitch", "resource_description": "Maybe next, we hire tax free convicts."},
+  {"resource_name": "No description", "resource_description": ""},
+  {"resource_name": "Tire iron", "resource_description": "Part 1 of 2 step plan"},
+  {"resource_name": "Fragile Window", "resource_description": "Part 2 of 2 step plan"},
+]
 
 // const task = [
 
@@ -17,4 +22,5 @@ const projects = [
 
 exports.seed = async function (knex) {
   await knex("projects").insert(projects)
+  await knex("resources").insert(resources)
 }
