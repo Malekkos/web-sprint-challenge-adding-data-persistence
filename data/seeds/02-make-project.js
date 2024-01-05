@@ -1,4 +1,4 @@
-const project = [
+const projects = [
   {"project_name": "Eat more meat", "project_description": "I need to eat more meat to pack on that protein muscle!", "project_completed": false},
   {"project_name": "Pretend I'm smart", "project_description": "I'm not insufferable enough!", "project_completed": true},
   {"project_name": "Fire competent employees", "project_description": "If they are all incompetent, then I don't have to pay a dime!", "project_completed": false},
@@ -16,5 +16,5 @@ const project = [
 // ]
 
 exports.seed = async function (knex) {
-  await knex("project").insert(project)
+  await knex("projects").insert(projects)
 }
